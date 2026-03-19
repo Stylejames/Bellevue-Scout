@@ -38,18 +38,6 @@ function Layout(props) {
           )}
           <p>Scouting</p>
         </Link>
-        <Link to={`/debug${search}`} className="nav-link">
-          {props.tab === 3 ? (
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-6">
-              <path fillRule="evenodd" d="M17.307 4.565a1 1 0 1 0-1.614-1.13l-1.96 2.8a7.077 7.077 0 0 0-3.466 0l-1.96-2.8a1 1 0 1 0-1.614 1.13l1.671 2.387A7.036 7.036 0 0 0 5 12v1h14v-1a7.036 7.036 0 0 0-3.364-6.048l1.671-2.387ZM4 15a1 1 0 0 1 1-1h1.5v2a5.97 5.97 0 0 0 .301 1.872L5.29 18.955A1 1 0 1 0 6.71 20.28l1.197-1.197A6 6 0 0 0 12 21a6 6 0 0 0 4.093-1.917l1.197 1.197a1 1 0 1 0 1.414-1.414l-1.49-1.49A5.972 5.972 0 0 0 17.5 16v-2H19a1 1 0 1 0 0-2H5a1 1 0 0 1-1 1Z" clipRule="evenodd" />
-            </svg>
-          ) : (
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M12 12.75c1.148 0 2.278.08 3.383.237 1.037.146 1.866.966 1.866 2.013 0 3.728-2.35 6.75-5.25 6.75S6.75 18.728 6.75 15c0-1.046.83-1.867 1.866-2.013A24.204 24.204 0 0 1 12 12.75Zm0 0c2.883 0 5.647.508 8.207 1.44a23.91 23.91 0 0 1-1.152 6.06M12 12.75c-2.883 0-5.647.508-8.208 1.44a23.91 23.91 0 0 0 1.153 6.06M12 12.75a2.25 2.25 0 0 0 2.248-2.354M12 12.75a2.25 2.25 0 0 1-2.248-2.354M12 8.25c.995 0 1.971-.08 2.922-.236.403-.066.74-.358.795-.762a3.778 3.778 0 0 0-.399-2.25M12 8.25c-.995 0-1.97-.08-2.922-.236-.402-.066-.74-.358-.795-.762a3.778 3.778 0 0 1 .4-2.25m0 0a3.75 3.75 0 1 1 7.498 0M9.483 5.764a3.75 3.75 0 0 1 7.498 0" />
-            </svg>
-          )}
-          <p>Debug</p>
-        </Link>
         <Link to="/settings" className="nav-link">
           {props.tab === 2 ? (
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-6">

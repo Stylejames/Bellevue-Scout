@@ -25,7 +25,7 @@ function Counter({ label, value, onChange, min = 0, max = 100 }) {
     <div>
       <label>{label}</label>
       <div className="counter-wrap">
-        <button className="counter-btn" onClick={() => onChange(Math.min(value + 1, max))} disabled={value >= max}>+</button>
+        <button className="counter-btn" onClick={() => onChange(Math.max(value - 1, min))} disabled={value <= min}>-</button>
         <input
           type="number"
           value={display}
@@ -35,7 +35,7 @@ function Counter({ label, value, onChange, min = 0, max = 100 }) {
           max={max}
           className="counter-input"
         />
-        <button className="counter-btn" onClick={() => onChange(Math.max(value - 1, min))} disabled={value <= min}>-</button>
+        <button className="counter-btn" onClick={() => onChange(Math.min(value + 1, max))} disabled={value >= max}>+</button>
       </div>
     </div>
   );

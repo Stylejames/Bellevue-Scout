@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Layout from '../components/layout/Layout';
+import { PHASE_CONFIG, storeRecordData } from '../lib/RecordData';
 
 function Settings() {
   const [mode, setMode] = useState(
@@ -8,6 +9,7 @@ function Settings() {
   const [scouterName, setScouterName] = useState(
     () => localStorage.getItem('scouterName') ?? ''
   );
+  const [clearStatus, setClearStatus] = useState(null);
 
   function applyMode(newMode) {
     setMode(newMode);
@@ -22,6 +24,11 @@ function Settings() {
   function handleScouterName(value) {
     setScouterName(value);
     localStorage.setItem('scouterName', value);
+  }
+
+  async function clearAllData() {
+    await Promise.all(Object.values(PHASE_CONFIG).map(phase => storeRecordData(phase, [])));
+    setClearStatus('All data cleared.');
   }
 
   return (
@@ -51,6 +58,16 @@ function Settings() {
               </button>
             ))}
           </div>
+        </div>
+        <div className="divider" />
+        <div className="flex flex-col gap-2">
+          <p className="section-label">Data</p>
+          <button onClick={clearAllData} className="btn-outline">
+            Clear Data
+          </button>
+          {clearStatus && (
+            <p className="text-center text-sm text-[var(--color-muted)]">{clearStatus}</p>
+          )}
         </div>
       </div>
     </Layout>
